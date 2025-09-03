@@ -1,19 +1,19 @@
-<% load static %>
+{% load static %}
 
 <!doctype html>
 <html lang="en">
 
 <head>
-    { block meta %}
+    {% block meta %}
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    { endblock %}
+    {% endblock %}
 
     {% block extra_meta %}
-    { endblock %}
+    {% endblock %}
 
-    { block corecss %}
+    {% block corecss %}
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
         integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
     {% endblock %}
@@ -21,7 +21,7 @@
     {% block extra_css %}
     {% endblock %}
 
-    { block corejs %}
+    {% block corejs %}
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"
         integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
@@ -32,10 +32,14 @@
     {% block extra_js %}
     {% endblock %}
 
-    { block extrastyle %}{ endblock extrastyle }
-    { block extrajs %}{ endblock extrajs }
+    {% block extrastyle %}
 
-    <title>Boutique Ado % { block extra_title %}{% endblock %}</title>
+    {% endblock %}
+
+    {% block extrajs %}
+    {% endblock %}
+
+    <title>Boutique Ado {% block extra_title %}{% endblock %}</title>
 </head>
 
 <body>
@@ -43,7 +47,7 @@
 
     {% if message %}
     <div class="message-container"></div>
-    { % endif %}
+    {% endif %}
 
     {% block page_header %}
     {% endblock %}
